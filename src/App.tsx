@@ -3,7 +3,7 @@ import 'uno.css';
 import '~/assets/style/reset.css';
 import { Link, Title } from 'react-head';
 import type { Route } from '~/routes';
-import favicon from '~/assets/images/favicon.svg';
+import favicon from '~/assets/images/favicon.png';
 
 export default function App({ routes }: { routes: Route[] }) {
   return (

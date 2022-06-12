@@ -4,6 +4,8 @@ import {
   transformerVariantGroup,
   presetWind,
   presetUno,
+  presetWebFonts,
+  presetIcons,
 } from 'unocss';
 // @ts-ignore
 import twConfig from './tailwind.config.cjs';
@@ -41,10 +43,30 @@ export default defineConfig({
         parent: `@media (max-width: ${mediaPx}px)`,
       };
     },
+    (matcher) => {
+      if (!matcher.startsWith('hocus:')) return matcher;
+
+      return {
+        matcher: matcher.slice(6),
+        selector: (s) => `${s}:hover, ${s}:focus`,
+      };
+    },
   ],
   presets: [
     presetUno(),
     presetWind(),
+    presetWebFonts({
+      fonts: {
+        mono: ['Space Mono'],
+      },
+    }),
+    presetIcons({
+      extraProperties: {
+        display: 'inline-block',
+        align: 'middle',
+        height: '1.5rem',
+      },
+    }),
   ],
   transformers: [
     transformerDirectives(),

@@ -1,0 +1,31 @@
+@keyframes little-bounce-full-anim {
+  from {
+    transform: translateY(-1rem) rotate(-2deg);
+  }
+  to {
+    transform: translateY(1rem) rotate(2deg);
+  }
+}
+
+@keyframes little-bounce-min-anim {
+  from {
+    transform: rotate(-2deg);
+  }
+  to {
+    transform: rotate(2deg);
+  }
+}
+
+.little-bounce {
+  animation: little-bounce-min-anim 5s infinite alternate ease-in-out;
+}
+
+@media (min-width: 1024px) {
+  .little-bounce {
+    animation-name: little-bounce-full-anim;
+  }
+}
+
+
+
+
