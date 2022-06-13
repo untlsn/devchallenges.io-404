@@ -10,7 +10,7 @@ const { routes, names } = getRoutes();
 const HeadProvider = _HeadProvider as FC<{ headTags: any[], children: any }>;
 
 export function render(url: string, headTags = []) {
-  return ReactDomServer.renderToStaticMarkup(
+  return ReactDomServer.renderToString(
     <HeadProvider headTags={headTags}>
       <StaticRouter location={url}>
         <App routes={routes} />
